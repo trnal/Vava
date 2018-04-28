@@ -19,15 +19,23 @@ public class Order {
 	private String town;
 	@Column(name="phone_number")
 	private String phoneNumber;
+	@Column(name="coord_lon")
+	private double coord_lon;
+	@Column(name="coord_lat")
+	private double coord_lat;
 	
-
-	public Order(String name, String description, String address, String phoneNumber, String town) {
+	public Order() {}
+	
+	public Order(String name, String description, String address, String phoneNumber, String town, double coordLon, double coordLat) {
 		this.name = name;
 		this.description = description;
 		this.address = address;
 		this.phoneNumber = phoneNumber;
 		this.town = town;
+		this.coord_lon = coordLon;
+		this.coord_lat = coordLat;
 	}
+	
 	public long getId() {
 		return id;
 	}
@@ -46,6 +54,4 @@ public class Order {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	
 }

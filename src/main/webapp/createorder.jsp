@@ -77,8 +77,8 @@ div#map_container {
 
 				<button type="submit" class="btn btn-primary">Send</button>
 
-				<input hidden id="map-long" name="coord-long" value=""> <input
-					hidden id="map-lat" name="coord-lat" value="">
+				<input hidden="true" id="map-long" name="coord-long" value=""> <input
+					hidden="true" id="map-lat" name="coord-lat" value="">
 
 			</form>
 
