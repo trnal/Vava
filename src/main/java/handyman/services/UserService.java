@@ -1,4 +1,4 @@
-package handyman.models;
+package handyman.services;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import handyman.repository.UserRepository;
+import handyman.models.User;
+import handyman.repositories.UserRepository;
 
 @Service
 public class UserService {

@@ -13,6 +13,21 @@ public class Order {
     private String name;
 	@Column(name="description")
     private String description;
+	@Column(name="address")
+	private String address;
+	@Column(name="town")
+	private String town;
+	@Column(name="phone_number")
+	private String phoneNumber;
+	
+
+	public Order(String name, String description, String address, String phoneNumber, String town) {
+		this.name = name;
+		this.description = description;
+		this.address = address;
+		this.phoneNumber = phoneNumber;
+		this.town = town;
+	}
 	public long getId() {
 		return id;
 	}

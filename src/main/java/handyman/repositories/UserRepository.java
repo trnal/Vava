@@ -1,4 +1,4 @@
-package handyman.repository;
+package handyman.repositories;
 
 import java.util.List;
 
