@@ -19,32 +19,11 @@
 			height: 350px;
 		}
 	</style>
-	<script type="text/javascript"
-			src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-
-	<script type="text/javascript">
-        function loadMap() {
-            var latlng = new google.maps.LatLng(4.3695030, 101.1224120);
-            var myOptions = {
-                zoom: 4,
-                center: latlng,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            var map = new google.maps.Map(document.getElementById("map_container"),myOptions);
-
-            var marker = new google.maps.Marker({
-                position: latlng,
-                map: map,
-                title:"my hometown, Malim Nawar!"
-            });
-
-        }
-	</script>
 
 </head>
 
 
-<body onload="loadMap()">
+<body>
 
 <div class="container">
 
@@ -53,11 +32,13 @@
 			<li class="nav-item active">
 				<a class="nav-link" href="#">HandyMan</a>
 			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">New Order</a>
+			</li>
 		</ul>
 	</nav>
 
-	<div
-			class="col-xs-12 col-sm-10 col-offset-sm-1 col-md-6 col-offset-md-3">
+	<div class="col-xs-12 col-sm-10 col-offset-sm-1 col-md-6 col-offset-md-3">
 		<h2>New Order</h2>
 
 		<form method="POST" action="/order/store">
@@ -91,6 +72,10 @@
 			</div>
 
 			<button type="submit" class="btn btn-primary">Send</button>
+
+			<input hidden id="map-long" name="coord-long" value="">
+			<input hidden id="map-lat" name="coord-lat" value="">
+
 		</form>
 
 		<div id="map_container"></div>
@@ -98,6 +83,51 @@
 	</div>
 
 </div>
+
+<script type="text/javascript">
+	var marker = null;
+    var lat = null;
+    var lng = null;
+
+    function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map_container'), {
+            zoom: 4,
+            center: uluru
+        });
+        marker = new google.maps.Marker({
+            position: uluru,
+            map: map,
+            title:"my hometown, Malim Nawar!"
+        });
+        lat = marker.getPosition().lat();
+        lng = marker.getPosition().lng();
+
+
+        map.addListener('click', function(e) {
+            placeMarker(e.latLng, map);
+        });
+
+        function placeMarker(position, map) {
+            marker.setMap(null);
+            marker = new google.maps.Marker({
+                position: position,
+                map: map
+            });
+            map.panTo(position);
+            lat = marker.getPosition().lat();
+            lng = marker.getPosition().lng();
+            document.getElementById('map-long').setAttribute('value', lng);
+            document.getElementById('map-lat').setAttribute('value', lat);
+        }
+    }
+
+</script>
+
+<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzFAb-50-x7wH2Nfz1s5XzJiHyfRlwT4Y&callback=initMap">
+</script>
+
 
 </body>
 
