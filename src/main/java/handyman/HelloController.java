@@ -1,4 +1,4 @@
-package controllers;
+package handyman;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

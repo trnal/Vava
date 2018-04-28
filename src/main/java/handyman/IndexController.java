@@ -1,4 +1,4 @@
-package controllers;
+package handyman;
 
 import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.web.bind.annotation.*;
