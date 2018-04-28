@@ -14,12 +14,37 @@
 		textarea {
 			resize: none;
 		}
+		div#map_container {
+			width: 100%;
+			height: 350px;
+		}
 	</style>
+	<script type="text/javascript"
+			src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+	<script type="text/javascript">
+        function loadMap() {
+            var latlng = new google.maps.LatLng(4.3695030, 101.1224120);
+            var myOptions = {
+                zoom: 4,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_container"),myOptions);
+
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: map,
+                title:"my hometown, Malim Nawar!"
+            });
+
+        }
+	</script>
 
 </head>
 
 
-<body>
+<body onload="loadMap()">
 
 <div class="container">
 
@@ -32,7 +57,7 @@
 	</nav>
 
 	<div
-			class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
+			class="col-xs-12 col-sm-10 col-offset-sm-1 col-md-6 col-offset-md-3">
 		<h2>New Order</h2>
 
 		<form method="POST" action="/order/store">
@@ -67,6 +92,9 @@
 
 			<button type="submit" class="btn btn-primary">Send</button>
 		</form>
+
+		<div id="map_container"></div>
+
 	</div>
 
 </div>
