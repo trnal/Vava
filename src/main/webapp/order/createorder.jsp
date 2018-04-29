@@ -66,26 +66,28 @@ div#map_container {
 						class="form-control"></textarea>
 				</div>
 				<div class="form-group">
-					<label>Address:</label> <input type="text" name="address" value=""
-						placeholder="Pekná cesta3" class="form-control">
-				</div>
-				<div class="form-group">
-					<label>Town:</label> <input type="text" name="town" value=""
-						placeholder="Bratislava" class="form-control">
-				</div>
-				<div class="form-group">
 					<label>Phone Number:</label> <input type="text" name="phoneNumber"
 						value="" placeholder="0944112233" class="form-control">
 				</div>
 
+				<input hidden="true" id="map-long" name="coordLon" value="48.14816">
+				<input hidden="true" id="map-lat" name="coordLat" value="17.10674">
+
+				<div id="map_container"></div>
+
+				<div class="form-group">
+					<label>Address:</label> <input type="text" name="address" value=""
+						placeholder="Pekná cesta3" class="form-control" id="address"
+						disabled>
+				</div>
+				<div class="form-group">
+					<label>Town:</label> <input type="text" name="town" value=""
+						placeholder="Bratislava" class="form-control" id="town" disabled>
+				</div>
+
 				<button type="submit" class="btn btn-primary">Send</button>
 
-				<input hidden="true" id="map-long" name="coordLon" value="-25.363">
-				<input hidden="true" id="map-lat" name="coordLat" value="131.044">
-
 			</form>
-
-			<div id="map_container"></div>
 
 		</div>
 
@@ -97,8 +99,8 @@ div#map_container {
 		var lng = null;
 
 		var uluru = {
-			lat : -25.363,
-			lng : 131.044
+			lat : 48.14816,
+			lng : 17.10674
 		};
 
 		var geocoder;
@@ -106,10 +108,10 @@ div#map_container {
 		function initMap() {
 			var map = new google.maps.Map(document
 					.getElementById('map_container'), {
-				zoom : 4,
+				zoom : 8,
 				center : uluru
 			});
-			geocoder = new google.maps.Geocoder();
+			geocoder = new google.maps.Geocoder;
 
 			marker = new google.maps.Marker({
 				position : uluru,
@@ -125,7 +127,7 @@ div#map_container {
 				placeMarker(e.latLng, map);
 			});
 		}
-		
+
 		function placeMarker(position, map) {
 			marker.setMap(null);
 			marker = new google.maps.Marker({
@@ -138,16 +140,25 @@ div#map_container {
 			lng = marker.getPosition().lng();
 			document.getElementById('map-long').setAttribute('value', lng);
 			document.getElementById('map-lat').setAttribute('value', lat);
-			var address = getAddress(lat, lng);
+			var address = getAddress(marker.getPosition());
 		}
 
-		function getAddress(lat, lng) {
-			var position = new google.maps.LatLng(lat,lng);
+		function getAddress(latlng) {
 			geocoder.geocode({
-				latLng : position
-			}, function(responses) {
-				if (responses && responses.length > 0) {
-					console.log(responses[0].fomatted_address);
+				'location' : latlng
+			}, function(results, status) {
+				if (status === 'OK') {
+					if (results[0]) {
+						var address = results[0].formatted_address.split(",");
+						document.getElementById('address').setAttribute(
+								'value', address[0]);
+						document.getElementById('town').setAttribute('value',
+								address[1]);
+					} else {
+						window.alert('No results found');
+					}
+				} else {
+					window.alert('Geocoder failed due to: ' + status);
 				}
 			});
 		}
