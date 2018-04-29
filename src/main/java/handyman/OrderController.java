@@ -28,16 +28,17 @@ public class OrderController {
 		LOG.log(Level.INFO, "Zobrazenie všetkých požiadaviek od používateľov");
 		List<Order> orders = orderService.getAllOrders();
 		
-		Gson gsonparser = new Gson();
+		Gson gsonparser = new Gson();	
 		String gson = gsonparser.toJson(orders);
 		model.addAttribute("orders", gson);
-        return "order/index";
+		
+		LOG.log(Level.INFO, "Ukončenie controllera pre zobrazenie požiadaviek od všetkých používateľov");
+		return "order/index";
     }
 	
 	@RequestMapping(path="/order", method = RequestMethod.GET)
     public String order(Model model) {
 		LOG.log(Level.INFO, "Otvorenie formulára s vytvorením požiadavky");
-		
         return "order/createorder";
     }
 	
