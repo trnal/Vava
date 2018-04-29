@@ -41,7 +41,7 @@ public class UserController {
 
         securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 
-        return "redirect:/welcome";
+        return "redirect:/login";
     }
 	
 	@RequestMapping(path="/signup", method = RequestMethod.GET)
@@ -78,8 +78,4 @@ public class UserController {
 		return new ResponseEntity<String>("18", HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
-    public String welcome(Model model) {
-        return "welcome";
-    }
 }

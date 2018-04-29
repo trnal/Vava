@@ -37,8 +37,7 @@ textarea {
 		</nav>
 
 		<!-- Form -->
-		<div
-			class="col-xs-12 col-sm-10 col-offset-sm-1 col-md-6 col-offset-md-3">
+		<div class="col-xs-12 col-sm-10 col-offset-sm-1 col-md-6 col-offset-md-3">
 			<h2>Create account</h2>
 
 			<form method="POST" action="/users/store">
