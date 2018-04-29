@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import handyman.models.User;
 import handyman.repositories.UserRepository;
 
-import java.util.HashSet;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -17,8 +16,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private RoleRepository roleRepository;
     */
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    private BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
     @Override
     public void save(User user) {
