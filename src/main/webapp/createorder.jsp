@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+
 <!DOCTYPE html>
 
 <html>
@@ -50,16 +53,16 @@ div#map_container {
 				<div class="form-group">
 					<label>Category:</label> <select name="category_id"
 						class="form-control">
-						<option value="0">Motory autá</option>
+						<option value="0">Motory autÃ¡</option>
 						<option value="1">Motory motorky</option>
-						<option value="2">Práčky</option>
+						<option value="2">PrÃ¡Äky</option>
 					</select>
 				</div>
 
 				<div class="form-group">
 					<label>Description:</label>
 					<textarea type="text" name="description" value=""
-						placeholder="Práčka vydávala zváštne zvuky pri zapínaní a pri žmmýkaní sa pokazila"
+						placeholder="Práčka vydávala zvláštne zvuky pri zapínaní­ a pri žmýkaní­ sa pokazila, neviem ani vybrať prádlo."
 						class="form-control"></textarea>
 				</div>
 				<div class="form-group">
