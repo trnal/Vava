@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @Table(name = "users", uniqueConstraints = { @UniqueConstraint(columnNames = { "email" }) })
 @Entity
-public class User extends org.springframework.security.core.userdetails.User{
+public class User{
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="id")
