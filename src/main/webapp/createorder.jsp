@@ -51,7 +51,7 @@ div#map_container {
 				</div>
 
 				<div class="form-group">
-					<label>Category:</label> <select name="category_id"
+					<label>Category:</label> <select name="categoryId"
 						class="form-control">
 						<option value="0">Motory autÃ¡</option>
 						<option value="1">Motory motorky</option>

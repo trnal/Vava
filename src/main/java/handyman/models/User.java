@@ -2,8 +2,6 @@ package handyman.models;
 
 import javax.persistence.*;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
 @Table(name = "users", uniqueConstraints = { @UniqueConstraint(columnNames = { "email" }) })
 @Entity
 public class User{
@@ -11,17 +9,20 @@ public class User{
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="id")
     private long id;
-    @Column(name="nickname")
-    private String nickname;
+    @Column(name="username")
+    private String username;
     @Column(name="email")
     private String email;
     @Column(name="password")
     private String password;
     @Column(name="abilities", length=1000)
     private String abilities;
+  
+    @Column(name="password_confirm")
+    private String passwordConfirm;
     
-    public User(String nickname, String email, String password, String abilities) {
-    	this.nickname = nickname;
+    public User(String username, String email, String password, String abilities) {
+    	this.username = username;
     	this.email = email;
     	this.password = password;
     	this.abilities = abilities;
@@ -36,14 +37,13 @@ public class User{
         this.id = id;
     }
 
-    public String getName() {
-        return nickname;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String nickname) {
-        this.nickname = nickname;
+    public void setUsername(String username) {
+        this.username = username;
     }
-
 
     public String getEmail() {
         return email;
@@ -66,8 +66,26 @@ public class User{
     	this.password = password;
     }
     
-    public User(String nickname, String password) {
-    	this.nickname = nickname;
+    @Transient
+    public String getPasswordConfirm() {
+        return passwordConfirm;
+    }
+
+    public void setPasswordConfirm(String passwordConfirm) {
+        this.passwordConfirm = passwordConfirm;
+    }    
+    
+    
+    public String getPassword() {
+		return password;
+	}
+
+
+	public User() {
+    }
+    
+    public User(String username, String password) {
+    	this.username = username;
     	this.password = password;
     }
 }
