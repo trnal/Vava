@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import handyman.models.Order;
-import handyman.models.User;
 import handyman.repositories.OrderRepository;
-import handyman.repositories.UserRepository;
 
 @Service
 public class OrderService {
@@ -20,5 +18,10 @@ public class OrderService {
 		List<Order> orders = new ArrayList<>();
 		orderRepository.findAll().forEach(orders::add);
 		return orders;
+	}
+	
+	public Order getOrderById(long id) {
+		Order order = orderRepository.findOne(id);
+		return order;
 	}
 }
