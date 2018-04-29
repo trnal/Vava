@@ -61,13 +61,19 @@ div#map_container {
 			for (var i = 0; i < markers.length; i++) {
 				var obj = markers[i];
 				console.log(i);
-				createdmarkers.push(new google.maps.Marker({
+				var marker = new google.maps.Marker({
 					position : {
 						lat : obj["coord_lat"],
 						lng : obj["coord_lon"]
 					},
 					map : map,
-				}));
+				});
+				createdmarkers.push(marker);
+				createdmarkers[createdmarkers.length - 1].addListener('click', function() {
+		          map.setZoom(6);
+		          map.setCenter(createdmarkers[createdmarkers.length - 1].getPosition());
+		        });
+				
 			}
 			console.log(createdmarkers);
 
