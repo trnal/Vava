@@ -1,4 +1,4 @@
-package handyman;
+/*package handyman;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +35,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
+<<<<<<< HEAD
                 .antMatchers("/resources/**", "/createUser", "/registration","/order/index").permitAll()
+=======
+                .antMatchers("/", "/home", "/order", "/order/store", "order/index").permitAll()
+>>>>>>> dcfe2b43cca401452565f834b2905136f5d8ea6a
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
@@ -70,4 +74,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         users.add(user2);
         return new InMemoryUserDetailsManager(users);
     }
-}
+}*/

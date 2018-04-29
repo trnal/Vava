@@ -20,9 +20,9 @@ public class Order {
 	@Column(name="phone_number")
 	private String phoneNumber;
 	@Column(name="coord_lon")
-	private double coord_lon;
+	private double coordLon;
 	@Column(name="coord_lat")
-	private double coord_lat;
+	private double coordLat;
 	
 	public Order() {}
 	
@@ -32,8 +32,8 @@ public class Order {
 		this.address = address;
 		this.phoneNumber = phoneNumber;
 		this.town = town;
-		this.coord_lon = coordLon;
-		this.coord_lat = coordLat;
+		this.coordLon = coordLon;
+		this.coordLat = coordLat;
 	}
 	
 	public long getId() {
@@ -54,4 +54,24 @@ public class Order {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	public String getAddress() {
+		return address;
+	};
+	
+	public String getTown() {
+		return town;
+	};
+	
+	public String getPhoneNumber() {
+		return town;
+	};
+	
+	public Double getCoordLon() {
+		return coordLat;
+	};
+	
+	public Double getCoordLat() {
+		return coordLat;
+	};
 }

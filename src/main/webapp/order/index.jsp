@@ -47,7 +47,6 @@ div#map_container {
 	<script type="text/javascript">
 		function initMap() {
 			var markers = ${orders}
-			console.log(markers);
 			var createdmarkers = [];
 			var uluru = {
 				lat : -25.363,
@@ -60,22 +59,22 @@ div#map_container {
 			});
 			for (var i = 0; i < markers.length; i++) {
 				var obj = markers[i];
-				console.log(i);
 				var marker = new google.maps.Marker({
 					position : {
-						lat : obj["coord_lat"],
-						lng : obj["coord_lon"]
+						lat : obj["coordLat"],
+						lng : obj["coordLon"]
 					},
 					map : map,
 				});
 				createdmarkers.push(marker);
-				createdmarkers[createdmarkers.length - 1].addListener('click', function() {
-		          map.setZoom(6);
-		          map.setCenter(createdmarkers[createdmarkers.length - 1].getPosition());
-		        });
-				
 			}
-			console.log(createdmarkers);
+			createdmarkers.forEach(function(marker, i){
+				marker.addListener('click', function(){
+					map.setZoom(6);
+					map.setCenter(marker.getPosition());
+					window.location.href = "/order-detail/"+markers[i]["id"];
+				});
+			});
 
 		}
 	</script>

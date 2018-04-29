@@ -2,12 +2,10 @@ package handyman;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,13 +36,21 @@ public class OrderController {
 	
 	@RequestMapping(path="/order", method = RequestMethod.GET)
     public String order(Model model) {
-        return "createorder";
+        return "order/createorder";
     }
 	
 	@RequestMapping(path="/order/store", method = RequestMethod.POST)
-    public String store(Model model, @RequestParam("name") String name, @RequestParam("description") String description, @RequestParam("phoneNumber") String phoneNumber, @RequestParam("address") String address, @RequestParam("town") String town, @RequestParam("coord-long") Double coordLong, @RequestParam("coord-lat") Double coordLat) {
-		Order newOrder = new Order(name, description, address, phoneNumber, town, coordLong, coordLat);	
+    public String store(Model model, @RequestParam("name") String name, @RequestParam("description") String description, @RequestParam("phoneNumber") String phoneNumber, @RequestParam("address") String address, @RequestParam("town") String town, @RequestParam("coordLon") Double coordLon, @RequestParam("coordLat") Double coordLat) {
+		Order newOrder = new Order(name, description, address, phoneNumber, town, coordLon, coordLat);	
 		orderRepository.save(newOrder);
 		return "redirect:/order/index";
     }
+	
+	@RequestMapping(path="/order-detail/{id}", method = RequestMethod.GET)
+	public String show(Model model, @PathVariable(value = "id")Long id) {
+		Order order = orderService.getOrderById(id);
+		model.addAttribute("order", order);
+		return "order/showOrder";
+	}
+	
 }

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+	pageEncoding="utf-8"%>
 
 <!DOCTYPE html>
 
@@ -35,8 +35,8 @@ div#map_container {
 			<a class="navbar-brand" href="/order/index">HandyMan</a>
 
 			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link" href="/order">New Order</a>
-				</li>
+				<li class="nav-item"><a class="nav-link" href="/order">New
+						Order</a></li>
 			</ul>
 		</nav>
 
@@ -53,15 +53,15 @@ div#map_container {
 				<div class="form-group">
 					<label>Category:</label> <select name="categoryId"
 						class="form-control">
-						<option value="0">Motory autÃ¡</option>
+						<option value="0">Motory autá</option>
 						<option value="1">Motory motorky</option>
-						<option value="2">PrÃ¡Äky</option>
+						<option value="2">Práčky</option>
 					</select>
 				</div>
 
 				<div class="form-group">
 					<label>Description:</label>
-					<textarea type="text" name="description" value=""
+					<textarea name="description"
 						placeholder="Práčka vydávala zvláštne zvuky pri zapínaní­ a pri žmýkaní­ sa pokazila, neviem ani vybrať prádlo."
 						class="form-control"></textarea>
 				</div>
@@ -80,8 +80,8 @@ div#map_container {
 
 				<button type="submit" class="btn btn-primary">Send</button>
 
-				<input hidden="true" id="map-long" name="coord-long" value="-25.363"> <input
-					hidden="true" id="map-lat" name="coord-lat" value="131.044">
+				<input hidden="true" id="map-long" name="coordLon" value="-25.363">
+				<input hidden="true" id="map-lat" name="coordLat" value="131.044">
 
 			</form>
 
@@ -95,11 +95,13 @@ div#map_container {
 		var marker = null;
 		var lat = null;
 		var lng = null;
-		
+
 		var uluru = {
-				lat : -25.363,
-				lng : 131.044
+			lat : -25.363,
+			lng : 131.044
 		};
+
+		var geocoder;
 
 		function initMap() {
 			var map = new google.maps.Map(document
@@ -107,7 +109,8 @@ div#map_container {
 				zoom : 4,
 				center : uluru
 			});
-			
+			geocoder = new google.maps.Geocoder();
+
 			marker = new google.maps.Marker({
 				position : uluru,
 				map : map,
@@ -117,24 +120,36 @@ div#map_container {
 
 			document.getElementById('map-long').setAttribute('value', lng);
 			document.getElementById('map-lat').setAttribute('value', lat);
-			
+
 			map.addListener('click', function(e) {
 				placeMarker(e.latLng, map);
 			});
+		}
+		
+		function placeMarker(position, map) {
+			marker.setMap(null);
+			marker = new google.maps.Marker({
+				position : position,
+				map : map
+			});
 
-			function placeMarker(position, map) {
-				marker.setMap(null);
-				marker = new google.maps.Marker({
-					position : position,
-					map : map
-				});
-				
-				map.panTo(position);
-				lat = marker.getPosition().lat();
-				lng = marker.getPosition().lng();
-				document.getElementById('map-long').setAttribute('value', lng);
-				document.getElementById('map-lat').setAttribute('value', lat);
-			}
+			map.panTo(position);
+			lat = marker.getPosition().lat();
+			lng = marker.getPosition().lng();
+			document.getElementById('map-long').setAttribute('value', lng);
+			document.getElementById('map-lat').setAttribute('value', lat);
+			var address = getAddress(lat, lng);
+		}
+
+		function getAddress(lat, lng) {
+			var position = new google.maps.LatLng(lat,lng);
+			geocoder.geocode({
+				latLng : position
+			}, function(responses) {
+				if (responses && responses.length > 0) {
+					console.log(responses[0].fomatted_address);
+				}
+			});
 		}
 	</script>
 
