@@ -1,0 +1,43 @@
+"2018-04-29 23:13:13 [main] INFO  handyman.WebApplication - Starting WebApplication on LAPTOP-UANT8ASR with PID 13216 (D:\Skola\8.semester\VAVA\projekt\Vava\target\classes started by micha in D:\Skola\8.semester\VAVA\projekt\Vava)
+"2018-04-29 23:13:13 [main] DEBUG handyman.WebApplication - Running with Spring Boot v1.5.12.RELEASE, Spring v4.3.16.RELEASE
+"2018-04-29 23:13:13 [main] INFO  handyman.WebApplication - No active profile set, falling back to default profiles: default
+"2018-04-29 23:13:13 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7aadd721: startup date [Sun Apr 29 23:13:13 CEST 2018]; root of context hierarchy
+"2018-04-29 23:13:14 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$56a15f30] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+"2018-04-29 23:13:14 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+"2018-04-29 23:13:14 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+"2018-04-29 23:13:14 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.29
+"2018-04-29 23:13:14 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+"2018-04-29 23:13:14 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+"2018-04-29 23:13:15 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+"2018-04-29 23:13:15 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+"2018-04-29 23:13:15 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+"2018-04-29 23:13:15 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+"2018-04-29 23:13:15 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+"2018-04-29 23:13:15 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+"2018-04-29 23:13:15 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+"2018-04-29 23:13:15 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+"2018-04-29 23:13:15 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+"2018-04-29 23:13:15 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+"2018-04-29 23:13:15 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+"2018-04-29 23:13:15 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+"2018-04-29 23:13:16 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+"2018-04-29 23:13:16 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+"2018-04-29 23:13:16 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+"2018-04-29 23:13:16 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+"2018-04-29 23:13:16 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+"2018-04-29 23:13:16 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+"2018-04-29 23:13:17 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e718d86, org.springframework.security.web.context.SecurityContextPersistenceFilter@57204792, org.springframework.security.web.header.HeaderWriterFilter@138dd92, org.springframework.security.web.csrf.CsrfFilter@54f390c6, org.springframework.security.web.authentication.logout.LogoutFilter@6e112bc7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4e7f24c2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@661ef6f3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@f2fdfe6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2df86aa1, org.springframework.security.web.session.SessionManagementFilter@1fc790fa, org.springframework.security.web.access.ExceptionTranslationFilter@179a6863, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4607a851]
+"2018-04-29 23:13:18 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+"2018-04-29 23:13:18 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+"2018-04-29 23:13:18 [main] INFO  handyman.WebApplication - Started WebApplication in 5.509 seconds (JVM running for 8.385)
+"2018-04-29 23:13:34 [http-nio-8080-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+"2018-04-29 23:13:37 [http-nio-8080-exec-6] INFO  org.hibernate.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+"2018-04-29 23:13:37 [http-nio-8080-exec-8] INFO  handyman.OrderController - Zobrazenie všetkých požiadaviek od používate¾ov
+"2018-04-29 23:14:16 [http-nio-8080-exec-3] INFO  handyman.OrderController - Otvorenie detailu s id 7
+"2018-04-29 23:15:29 [http-nio-8080-exec-1] INFO  handyman.OrderController - Zobrazenie všetkých požiadaviek od používate¾ov
+"2018-04-29 23:15:32 [http-nio-8080-exec-4] INFO  handyman.OrderController - Otvorenie detailu s id 8
+"2018-04-29 23:21:09 [Thread-5] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7aadd721: startup date [Sun Apr 29 23:13:13 CEST 2018]; root of context hierarchy
+"2018-04-29 23:21:09 [Thread-5] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+"2018-04-29 23:21:09 [Thread-5] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
