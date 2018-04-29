@@ -17,13 +17,21 @@ public class User {
     private String email;
     @Column(name="password")
     private String password;
+    @Column(name="abilities", length=1000)
+    private String abilities;
+    
+    public User(String nickname, String email, String password, String abilities) {
+    	this.nickname = nickname;
+    	this.email = email;
+    	this.password = password;
+    	this.abilities = abilities;
+    }
 
 
     public long getId() {
         return id;
     }
 
-    
     public void setId(long id) {
         this.id = id;
     }
@@ -43,6 +51,14 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    
+    public String getAbilities() {
+        return abilities;
+    }
+
+    public void setAbilities(String abilities) {
+        this.abilities = abilities;
     }
     
 
