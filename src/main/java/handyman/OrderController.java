@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.google.gson.Gson;
+
 import handyman.models.Order;
 import handyman.repositories.OrderRepository;
 import handyman.services.OrderService;
@@ -27,7 +29,10 @@ public class OrderController {
 	@RequestMapping(path="/order/index", method = RequestMethod.GET)
     public String index(Model model) {
 		List<Order> orders = orderService.getAllOrders();
-		model.addAttribute("orders", orders);
+		
+		Gson gsonparser = new Gson();
+		String gson = gsonparser.toJson(orders);
+		model.addAttribute("orders", gson);
         return "order/index";
     }
 	
@@ -38,8 +43,8 @@ public class OrderController {
 	
 	@RequestMapping(path="/order/store", method = RequestMethod.POST)
     public String store(Model model, @RequestParam("name") String name, @RequestParam("description") String description, @RequestParam("phoneNumber") String phoneNumber, @RequestParam("address") String address, @RequestParam("town") String town, @RequestParam("coord-long") Double coordLong, @RequestParam("coord-lat") Double coordLat) {
-		Order newOrder = new Order(name, description, address, phoneNumber, town, coordLat, coordLong);	
+		Order newOrder = new Order(name, description, address, phoneNumber, town, coordLong, coordLat);	
 		orderRepository.save(newOrder);
-		return "createorder";
+		return "redirect:/order/index";
     }
 }

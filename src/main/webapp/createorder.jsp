@@ -77,8 +77,8 @@ div#map_container {
 
 				<button type="submit" class="btn btn-primary">Send</button>
 
-				<input hidden="true" id="map-long" name="coord-long" value=""> <input
-					hidden="true" id="map-lat" name="coord-lat" value="">
+				<input hidden="true" id="map-long" name="coord-long" value="-25.363"> <input
+					hidden="true" id="map-lat" name="coord-lat" value="131.044">
 
 			</form>
 
@@ -92,25 +92,29 @@ div#map_container {
 		var marker = null;
 		var lat = null;
 		var lng = null;
-
-		function initMap() {
-			var uluru = {
+		
+		var uluru = {
 				lat : -25.363,
 				lng : 131.044
-			};
+		};
+
+		function initMap() {
 			var map = new google.maps.Map(document
 					.getElementById('map_container'), {
 				zoom : 4,
 				center : uluru
 			});
+			
 			marker = new google.maps.Marker({
 				position : uluru,
 				map : map,
-				title : "my hometown, Malim Nawar!"
 			});
 			lat = marker.getPosition().lat();
 			lng = marker.getPosition().lng();
 
+			document.getElementById('map-long').setAttribute('value', lng);
+			document.getElementById('map-lat').setAttribute('value', lat);
+			
 			map.addListener('click', function(e) {
 				placeMarker(e.latLng, map);
 			});
@@ -121,6 +125,7 @@ div#map_container {
 					position : position,
 					map : map
 				});
+				
 				map.panTo(position);
 				lat = marker.getPosition().lat();
 				lng = marker.getPosition().lng();
