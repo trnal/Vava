@@ -8,6 +8,12 @@ public class IndexController implements ErrorController{
 
     private static final String PATH = "/error";
 
+    @RequestMapping(path="/", method = RequestMethod.GET)
+    public String index() {
+    	return "redirect:/order/index";
+    }
+    
+    
     @RequestMapping(value = PATH)
     public String error() {
         return "Error handling";

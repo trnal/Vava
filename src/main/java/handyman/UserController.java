@@ -1,16 +1,16 @@
 package handyman;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import handyman.models.User;
 import handyman.repositories.UserRepository;
+import handyman.services.SecurityService;
+import handyman.services.UserService;
 
 
 @Controller
@@ -18,22 +18,49 @@ public class UserController {
 	
 	@Autowired
 	private UserRepository userRepository;
+	@Autowired
+    private UserService userService;
+    @Autowired
+    private SecurityService securityService;
 	
-	@RequestMapping(path="/user", method = RequestMethod.GET)
-	public ResponseEntity<List<User>>  listUser(){
-		return new ResponseEntity<List<User>>(getUsers(), HttpStatus.OK);
-	}
-	
-	@RequestMapping(path="/user/{id}", method = RequestMethod.GET)
-	public ResponseEntity<User>  listUser(@PathVariable(value = "id") long id){
-		return new ResponseEntity<User>(getUsers().stream().filter(user -> user.getId() == id).findFirst().orElse(null), HttpStatus.OK);
-		
-	}
+    @RequestMapping(value = "/registration", method = RequestMethod.GET)
+    public String registration(Model model) {
+        model.addAttribute("userForm", new User());
+
+        return "registration";
+    }
+    
+    @RequestMapping(value = "/registration", method = RequestMethod.POST)
+    public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
+
+        if (bindingResult.hasErrors()) {
+            return "registration";
+        }
+
+        userService.save(userForm);
+
+        securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
+
+        return "redirect:/welcome";
+    }
 	
 	@RequestMapping(path="/signup", method = RequestMethod.GET)
-    public String order(Model model) {
+    public String signup(Model model) {
+		model.addAttribute("userForm", new User());
         return "createUser";
     }
+	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login(Model model, String error, String logout) {
+        if (error != null)
+            model.addAttribute("error", "Your username or password is invalid.");
+
+        if (logout != null)
+            model.addAttribute("message", "You have been logged out successfully.");
+
+        return "login";
+    }
+	
 	
 	@RequestMapping(path="/users/store", method = RequestMethod.POST)
     public String store(Model model, @RequestParam("nickname") String nickname, @RequestParam("email") String email, @RequestParam("password") String password, @RequestParam("confirmPassword") String confirmPassword, @RequestParam("abilities") String abilities) {
@@ -51,10 +78,8 @@ public class UserController {
 		return new ResponseEntity<String>("18", HttpStatus.OK);
 	}
 	
-	
-	private List<User> getUsers() {
-		return new ArrayList<User>();
-	}
-
-
+	@RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
+    public String welcome(Model model) {
+        return "welcome";
+    }
 }

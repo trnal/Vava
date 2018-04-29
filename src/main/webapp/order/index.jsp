@@ -32,15 +32,16 @@ div#map_container {
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link" href="/order">New
 						Order</a></li>
+				<li class="nav-item">
+					<c:if test="${pageContext.request.userPrincipal.name != null}">
+        				<form id="logoutForm" method="POST" action="${contextPath}/logout">
+            				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        					<a class="nav-link" onclick="document.forms['logoutForm'].submit()">Logout</a>
+						</form>
+					</c:if>
+				</li>
 			</ul>
 		</nav>
-
-		<div
-			class="col-xs-12 col-sm-10 col-offset-sm-1 col-md-6 col-offset-md-3">
-			<h2>All orders</h2>
-			<div id="map_container"></div>
-
-		</div>
 
 	</div>
 
