@@ -41,7 +41,7 @@ public class UserController {
 		if(password!=null && password.equals(confirmPassword)) {
 			User newUser = new User(nickname, email, password, abilities);	
 			userRepository.save(newUser);
-			return "createorder";
+			return "userProfile";
 		}
 		return "createUser";
     }
