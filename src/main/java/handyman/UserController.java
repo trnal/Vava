@@ -33,7 +33,7 @@ public class UserController {
         return "registration";
     }
     
-    @RequestMapping(value = "/registration", method = RequestMethod.POST)
+    @PostMapping("registration")
     public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
     	LOG.log(Level.INFO, "Používateľ zadal požiadavku na registráciu");
     	
