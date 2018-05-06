@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.User;
@@ -23,7 +24,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private UserRepository userRepository;
 	
-	 @Autowired
+	@Autowired
     private UserDetailsService userDetailsService;
 
     @Bean
@@ -33,41 +34,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
+        http.csrf().disable()
             .authorizeRequests()
-                .antMatchers("/resources/**", "/createUser", "/registration","/order/index").permitAll()
+                .antMatchers("/resources/**", "/createUser", "/registration", "/order/index").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
                 .loginPage("/login")
+                .defaultSuccessUrl("/")
                 .permitAll()
                 .and()
             .logout()
-                .permitAll();
+                .permitAll()
+                .logoutSuccessUrl("/order/index");
     }
+    
     
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder());
-    }
-
-    @Bean
-    @Override
-    public UserDetailsService userDetailsService() {
-    	
-    	List<UserDetails> users = new ArrayList<>();
-        UserDetails user =
-        		User.withUsername("user")
-                .password("password")
-                .roles("USER")
-                .build();
-        users.add(user);
-        UserDetails user2 =
-        		User.withUsername("user2")
-                .password("password")
-                .roles("USER")
-                .build();
-        users.add(user2);
-        return new InMemoryUserDetailsManager(users);
     }
 }

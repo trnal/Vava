@@ -5,61 +5,26 @@
 
 <html>
 <head>
-<title>Handyman</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-	integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
-	crossorigin="anonymous">
-
-<style>
-textarea {
-	resize: none;
-}
-
-div#map_container {
-	width: 100%;
-	height: 350px;
-}
-</style>
-
+	<jsp:include page="/partials/head.jsp"></jsp:include>
 </head>
 
 
 <body>
-
 	<div class="container">
-
-		<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-			<a class="navbar-brand" href="/order/index">HandyMan</a>
-
-			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link" href="/order">New
-						Order</a></li>
-				<li class="nav-item">
-					<c:if test="${pageContext.request.userPrincipal.name != null}">
-        				<form id="logoutForm" method="POST" action="${contextPath}/logout">
-            				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-        					<a class="nav-link" onclick="document.forms['logoutForm'].submit()">Logout</a>
-						</form>
-					</c:if>
-				</li>
-			</ul>
-		</nav>
+		<jsp:include page="/partials/navigation.jsp"></jsp:include>
 
 		<div
 			class="col-xs-12 col-sm-10 col-offset-sm-1 col-md-6 col-offset-md-3">
 			<h2>New Order</h2>
 
-			<form method="POST" action="/order/store">
+			<form method="POST" action="/order">
 				<div class="form-group">
 					<label>Name:</label> <input type="text" name="name" value=""
 						placeholder="Pokazená práčka" class="form-control">
 				</div>
-
 				<div class="form-group">
-					<label>Category:</label> <select name="categoryId"
+					<label>Category:</label> 
+					<select name="categoryId"
 						class="form-control">
 						<option value="0">Motory autá</option>
 						<option value="1">Motory motorky</option>
@@ -78,34 +43,32 @@ div#map_container {
 						value="" placeholder="0944112233" class="form-control">
 				</div>
 
-				<input hidden="true" id="map-long" name="coordLon" value="48.14816">
-				<input hidden="true" id="map-lat" name="coordLat" value="17.10674">
-
-				<div id="map_container"></div>
-
 				<div class="form-group">
 					<label>Address:</label> <input type="text" name="address" value=""
 						placeholder="Pekná cesta3" class="form-control" id="address"
-						disabled>
+						readonly>
 				</div>
 				<div class="form-group">
 					<label>Town:</label> <input type="text" name="town" value=""
-						placeholder="Bratislava" class="form-control" id="town" disabled>
+						placeholder="Bratislava" class="form-control" id="town" readonly>
 				</div>
 
+				<input hidden="true" id="map-long" name="coordLon" value="48.14816">
+				<input hidden="true" id="map-lat" name="coordLat" value="17.10674">
+				
 				<button type="submit" class="btn btn-primary">Send</button>
 
 			</form>
+			<div id="map_container"></div>
 
 		</div>
-
 	</div>
 
 	<script type="text/javascript">
 		var marker = null;
 		var lat = null;
 		var lng = null;
-
+		var address = null;
 		var uluru = {
 			lat : 48.14816,
 			lng : 17.10674
@@ -134,6 +97,7 @@ div#map_container {
 			map.addListener('click', function(e) {
 				placeMarker(e.latLng, map);
 			});
+			address = getAddress(marker.getPosition());
 		}
 
 		function placeMarker(position, map) {
@@ -148,7 +112,7 @@ div#map_container {
 			lng = marker.getPosition().lng();
 			document.getElementById('map-long').setAttribute('value', lng);
 			document.getElementById('map-lat').setAttribute('value', lat);
-			var address = getAddress(marker.getPosition());
+			address = getAddress(marker.getPosition());
 		}
 
 		function getAddress(latlng) {

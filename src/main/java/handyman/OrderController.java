@@ -28,23 +28,27 @@ public class OrderController {
 		LOG.log(Level.INFO, "Zobrazenie všetkých požiadaviek od používateľov");
 		List<Order> orders = orderService.getAllOrders();
 		
-		Gson gsonparser = new Gson();
+		Gson gsonparser = new Gson();	
 		String gson = gsonparser.toJson(orders);
 		model.addAttribute("orders", gson);
-        return "order/index";
+		
+		LOG.log(Level.INFO, "Ukončenie controllera pre zobrazenie požiadaviek od všetkých používateľov");
+		return "order/index";
     }
 	
 	@RequestMapping(path="/order", method = RequestMethod.GET)
     public String order(Model model) {
 		LOG.log(Level.INFO, "Otvorenie formulára s vytvorením požiadavky");
-		
         return "order/createorder";
     }
 	
-	@RequestMapping(path="/order/store", method = RequestMethod.POST)
-    public String store(Model model, @RequestParam("name") String name, @RequestParam("description") String description, @RequestParam("phoneNumber") String phoneNumber, @RequestParam("address") String address, @RequestParam("town") String town, @RequestParam("coordLon") Double coordLon, @RequestParam("coordLat") Double coordLat) {
-		Order newOrder = new Order(name, description, address, phoneNumber, town, coordLon, coordLat);	
+	@PostMapping(path="/order")
+    public String storeOrder(@RequestParam("name") String name, @RequestParam("categoryId") Double categoryId, 
+    		@RequestParam("description") String description, @RequestParam("phoneNumber") String phoneNumber, 
+    		@RequestParam("address") String address, @RequestParam("town") String town, 
+    		@RequestParam("coordLon") Double coordLon, @RequestParam("coordLat") Double coordLat, Model model) {
 		LOG.log(Level.INFO, "Začiatok ukladania požiadavky do databázy");
+		Order newOrder = new Order(name, description, address, phoneNumber, town, coordLon, coordLat);	
 		try {
 			orderRepository.save(newOrder);
 		} catch (Exception e) {
