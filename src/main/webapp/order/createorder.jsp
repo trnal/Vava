@@ -1,6 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
-
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 
 <html>
@@ -8,8 +6,6 @@
 	<jsp:include page="/partials/head.jsp"></jsp:include>
 	<link href="/resources/main.css" rel="stylesheet">
 </head>
-
-
 <body>
 	<div class="container">
 		<jsp:include page="/partials/navigation.jsp"></jsp:include>
