@@ -4,7 +4,7 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
 	<a class="navbar-brand" href="/order/index">HandyMan</a>
 	<ul class="navbar-nav">
-		<li class="nav-item"><a class="nav-link" href="/order"><spring:message code="new.order"/></a></li>
+		<li class="nav-item"><a class="nav-link" href="/order"><spring:message code="order.new"/></a></li>
 		<c:if test="${not empty pageContext.request.userPrincipal}">
     		<form id="logoutForm" method="POST" class="nav-item" action="${contextPath}/logout" style="cursor: pointer;">
 				<a class="nav-link" onclick="document.forms['logoutForm'].submit()"><spring:message code="logout"/></a>
