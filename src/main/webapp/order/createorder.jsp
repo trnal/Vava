@@ -6,6 +6,7 @@
 <html>
 <head>
 	<jsp:include page="/partials/head.jsp"></jsp:include>
+	<link href="/resources/main.css" rel="stylesheet">
 </head>
 
 
