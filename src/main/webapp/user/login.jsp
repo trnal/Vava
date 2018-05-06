@@ -2,7 +2,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
-<c:set var="localeCode" value="${pageContext.request.locale}" />
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,16 +41,5 @@
 	</div>	
 </div>
 <!-- /container -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#locales").change(function () {
-                var selectedOption = $('#locales').val();
-                if (selectedOption !== ''){
-                    window.location.replace('locale?lang=' + selectedOption);
-                }
-            });
-        });
-    </script>
  </body>
 </html>
