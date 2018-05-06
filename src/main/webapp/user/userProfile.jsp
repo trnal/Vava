@@ -12,7 +12,6 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
 	integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
 	crossorigin="anonymous">
-
 <style>
 textarea {
 	resize: none;
@@ -25,7 +24,9 @@ textarea {
 <body>
 
 	<div class="container">
-
+		<!-- top navigation -->
+		<jsp:include page="/partials/navigation.jsp"></jsp:include>
+	
 		<!-- top navigation -->
 		<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
 			<a class="navbar-brand" href="/order/index">HandyMan</a>

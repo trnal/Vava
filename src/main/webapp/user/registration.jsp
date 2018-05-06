@@ -25,6 +25,9 @@
 <body>
 
 	<div class="container">
+	<!-- top navigation -->
+	<jsp:include page="/partials/navigation.jsp"></jsp:include>
+	
 		<div class="col-xs-12 col-sm-10 col-offset-sm-1 col-md-6 col-offset-md-3">
 			<form:form method="POST" modelAttribute="userForm" class="form-signin">
 				<h2 class="form-signin-heading">Create your account</h2>

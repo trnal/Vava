@@ -30,7 +30,7 @@ public class UserController {
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public String registration(Model model) {
         model.addAttribute("userForm", new User());
-        return "registration";
+        return "user/registration";
     }
     
     @PostMapping("registration")
@@ -63,7 +63,7 @@ public class UserController {
         if (logout != null)
             model.addAttribute("message", "You have been logged out successfully.");
 
-        return "login";
+        return "user/login";
     }
 	
 	

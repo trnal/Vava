@@ -5,26 +5,22 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<title>Handyman</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-	integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
-	crossorigin="anonymous">
-
-<style>
-textarea {
-	resize: none;
-}
-</style>
-
+<head>
+	<title>Handyman</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+		integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+		crossorigin="anonymous">
 </head>
 
 <body>
 
 <div class="container">
-
+	<!-- top navigation -->
+	<jsp:include page="/partials/navigation.jsp"></jsp:include>
+		
 	<div class="col-xs-12 col-sm-10 col-offset-sm-1 col-md-6 col-offset-md-3">
 	    <form method="POST" action="${contextPath}/login" class="form-signin">
 	        <h2 class="form-heading">Log in</h2>
