@@ -19,6 +19,7 @@
 
 	<script type="text/javascript">
 		function initMap() {
+			var iw = new google.maps.InfoWindow();
 			var markers = ${orders}
 			var createdmarkers = [];
 			var uluru = {
@@ -46,6 +47,16 @@
 					map.setZoom(6);
 					map.setCenter(marker.getPosition());
 					window.location.href = "/order-detail/"+markers[i]["id"];
+				});
+				
+				marker.addListener('mouseover', function(){
+					$.ajax({  
+		                url: '/order/data?orderid='+markers[i]["id"],  
+		                success: function(data) { 
+		                	iw.setContent(data);  
+		                    iw.open(map, marker);
+		                }  
+		            });
 				});
 			});
 

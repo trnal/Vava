@@ -3,6 +3,7 @@ package handyman;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -56,6 +57,19 @@ public class OrderController {
 		}
 		LOG.log(Level.INFO, "Presmerovanie na obrazovku so všetkými požiadavkami");
 		return "redirect:/order/index";
+    }
+	
+	@GetMapping(path="/order/data")
+    public ResponseEntity<?> getOnHoverData(@RequestParam("orderid") Long orderId) {
+		LOG.log(Level.INFO, "OnHover bol spusteny nad id " + orderId);
+		Order order = null;
+		try {
+			order = orderRepository.findOne(orderId);
+		} catch (Exception e) {
+			LOG.log(Level.SEVERE, "Požadovaná požiadavka sa nepodarila nájsť v databáze", e);
+		}
+		LOG.log(Level.INFO, "OnHover prebehol úspešne");
+		return ResponseEntity.ok(order.getName() + "<br>" + order.getTown() + "<br>" + order.getAddress());
     }
 	
 	@RequestMapping(path="/order-detail/{id}", method = RequestMethod.GET)
