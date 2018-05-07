@@ -7,7 +7,7 @@
 
 <body>
 
-	<div class="container aaa">
+	<div class="container">
 
 		<!-- top navigation -->
 		<jsp:include page="/partials/navigation.jsp"></jsp:include>

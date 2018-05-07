@@ -12,13 +12,14 @@
 
 <body>
 
-<div class="container">
-	
-	<!-- top navigation -->
+<!-- top navigation -->
+
+<div class="container login">
 	<jsp:include page="/partials/navigation.jsp"></jsp:include>
+	
 	<div class="row">
-		<div class="col-xs-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-			<h1>Log in</h1>
+		<div class="col-xs-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3 login-panel">
+			<h1 class="mb-4">Log in</h1>
 		    <form method="POST" action="${contextPath}/login" class="form-signin">
 		    	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 		
@@ -35,7 +36,7 @@
 		         </div>   
 		       
 	            <button class="btn btn-lg btn-primary btn-block col-xs-3" type="submit">Log In</button>
-	            <h3 class="text-center"><a href="${contextPath}/registration">Create an account</a></h3>
+	            <h3 class="text-center mt-3"><a href="${contextPath}/registration">Create an account</a></h3>
 		        
 		    </form>
 		</div>

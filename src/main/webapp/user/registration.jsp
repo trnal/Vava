@@ -12,13 +12,13 @@
 
 <body>
 
-	<div class="container">
+	<div class="container login">
 	<!-- top navigation -->
 	<jsp:include page="/partials/navigation.jsp"></jsp:include>
-	
-		<div class="col-xs-12 col-sm-10 col-offset-sm-1 col-md-6 col-offset-md-3">
+		
+		<div class="col-xs-12 col-sm-10 offset-sm-1 col-md-6 offset-md-3 login-panel">
 			<form:form method="POST" modelAttribute="userForm" class="form-signin">
-				<h2 class="form-signin-heading">Create your account</h2>
+				<h2 class="form-signin-heading mb-4">Create your account</h2>
 				<spring:bind path="username">
 					<div class="form-group ${status.error ? 'has-error' : ''}">
 						<form:input type="text" path="username" class="form-control"
@@ -56,7 +56,8 @@
 					</div>
 				</spring:bind>
 	
-				<button type="submit" class="btn btn-primary">Register</button>
+				<button type="submit" class="btn btn-lg btn-primary w-100">Register</button>
+				<h3 class="text-center mt-3"><a href="${contextPath}/login">I already have an account</a></h3>
 			</form:form>
 		</div>
 	</div>
