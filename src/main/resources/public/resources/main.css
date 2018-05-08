@@ -1,3 +1,6 @@
+html, body {
+    height:100%;
+}
 
 h1{
 	font-size: 2.5rem;
@@ -17,10 +20,14 @@ h3 {
     line-height: 1.2;
 }
 
-.aaa {
-	background-color: red;
+a {
+	color: #18121e;
 }
 
+a:hover {
+	color: #233237;
+	font-weight: 400;
+}
 
 textarea {
 	resize: none;
@@ -29,4 +36,60 @@ textarea {
 div#map_container {
 	width: 100%;
 	height: 350px;
-}"src/main/webapp/css/main.css"
+}
+
+.container.login {
+	background-image: url("main.jpg");
+	background-size: cover;
+	height: 100%;
+}
+
+.login-panel {
+	background-color: white;
+	background-blend-mode: lighten;
+	padding: 2rem;
+	margin-top: 10vh;
+}
+
+.navbar {
+	width: calc(100% + 30px);
+	margin-left: -15px;
+	margin-bottom: 3rem;
+	background-color: #18121e; 
+	color: white;
+	padding-left: 5rem;
+	padding-right: 5rem;
+}
+
+.nav-item {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+.nav-select {
+	background-color: #18121e;
+	color: white; 
+	border: 0;
+}
+
+.nav-select:focus {
+	border-color: white;
+	outline-color: white;
+}
+
+.btn-primary {
+	background-color: #18121e;
+	border-color: #18121e;
+	outline-color: #18121e;
+}
+
+.btn-primary:hover {
+	background-color: #233237;
+	border-color: #18121e;
+	outline-color: #18121e;
+}
+
+.form-control:focus{
+	border: 0;
+	box-shadow: 0 0 0 0.1rem rgba(35,50,55,0.5)
+}
