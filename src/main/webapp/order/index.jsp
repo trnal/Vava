@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ include file="/partials/prefix.jsp" %>
+
 <!DOCTYPE html>
 
 <html>
@@ -12,7 +13,7 @@
 		<jsp:include page="/partials/navigation.jsp"></jsp:include>
 
 			<div class="col-xs-12 col-sm-10 col-offset-sm-1 col-md-6 col-offset-md-3">
-				<h2>All orders</h2>
+				<h2><spring:message code="order.all"/></h2>
 				<div id="map_container" class="map_full"></div>
 			</div>
 	</div>

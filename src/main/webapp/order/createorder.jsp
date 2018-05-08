@@ -1,3 +1,4 @@
+<%@ include file="/partials/prefix.jsp" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 
@@ -12,15 +13,15 @@
 
 		<div
 			class="col-xs-12 col-sm-10 col-offset-sm-1 col-md-6 col-offset-md-3">
-			<h2>New Order</h2>
+			<h2><spring:message code="order.new"/></h2>
 
 			<form method="POST" action="/order">
 				<div class="form-group">
-					<label>Name:</label> <input type="text" name="name" value=""
-						placeholder="Pokazená práčka" class="form-control">
+					<label><spring:message code="order.name"/>:</label> <input type="text" name="name" value=""
+						placeholder="<spring:message code="order.name.placeholder"/>" class="form-control">
 				</div>
 				<div class="form-group">
-					<label>Category:</label> 
+					<label><spring:message code="order.category"/>:</label> 
 					<select name="categoryId"
 						class="form-control">
 						<option value="0">Motory autá</option>
@@ -30,33 +31,35 @@
 				</div>
 
 				<div class="form-group">
-					<label>Description:</label>
+					<label><spring:message code="order.description"/>:</label>
 					<textarea name="description"
-						placeholder="Práčka vydávala zvláštne zvuky pri zapínaní­ a pri žmýkaní­ sa pokazila, neviem ani vybrať prádlo."
+						placeholder="<spring:message code="order.description.placeholder"/>"
 						class="form-control"></textarea>
 				</div>
 				<div class="form-group">
-					<label>Phone Number:</label> <input type="text" name="phoneNumber"
+					<label><spring:message code="order.phone.number"/>:</label> <input type="text" name="phoneNumber"
 						value="" placeholder="0944112233" class="form-control">
 				</div>
 
 				<div class="form-group">
-					<label>Address:</label> <input type="text" name="address" value=""
+					<label><spring:message code="order.address"/>:</label> <input type="text" name="address" value=""
 						placeholder="Pekná cesta3" class="form-control" id="address"
 						readonly>
 				</div>
 				<div class="form-group">
-					<label>Town:</label> <input type="text" name="town" value=""
+					<label><spring:message code="order.town"/>:</label> <input type="text" name="town" value=""
 						placeholder="Bratislava" class="form-control" id="town" readonly>
 				</div>
 
 				<input hidden="true" id="map-long" name="coordLon" value="48.14816">
 				<input hidden="true" id="map-lat" name="coordLat" value="17.10674">
 				
-				<button type="submit" class="btn btn-primary">Send</button>
+				<div id="map_container"></div>
+				
+				<button type="submit" class="btn btn-primary col-xs-10 col-sm-5">Send</button>
 
 			</form>
-			<div id="map_container"></div>
+			
 
 		</div>
 	</div>

@@ -1,5 +1,4 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="/partials/prefix.jsp" %>
 
 <nav class="navbar navbar-dark bg-faded rounded navbar-expand-sm">
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
