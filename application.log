@@ -22128,4 +22128,240 @@ Caused by: java.lang.NullPointerException: null
 ""2018-05-08 10:50:00 [Thread-5] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3b95cb5a: startup date [Tue May 08 10:45:41 CEST 2018]; root of context hierarchy
 ""2018-05-08 10:50:00 [Thread-5] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
 ""2018-05-08 10:50:00 [Thread-5] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2018-05-08 10:52:39 [main] INFO  handyman.WebApplication - Starting WebApplication on LAPTOP-UANT8ASR with PID 7876 (D:\Skola\8.semester\VAVA\projekt\Vava\target\classes started by micha in D:\Skola\8.semester\VAVA\projekt\Vava)
+""2018-05-08 10:52:39 [main] DEBUG handyman.WebApplication - Running with Spring Boot v1.5.12.RELEASE, Spring v4.3.16.RELEASE
+""2018-05-08 10:52:39 [main] INFO  handyman.WebApplication - No active profile set, falling back to default profiles: default
+""2018-05-08 10:52:39 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@38d8bf73: startup date [Tue May 08 10:52:39 CEST 2018]; root of context hierarchy
+""2018-05-08 10:52:39 [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'localeResolver' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=appConfig; factoryMethodName=localeResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [handyman/AppConfig.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=webApplication; factoryMethodName=localeResolver; initMethodName=null; destroyMethodName=(inferred); defined in handyman.WebApplication]
+""2018-05-08 10:52:40 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d3e1dafa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2018-05-08 10:52:41 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+""2018-05-08 10:52:41 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+""2018-05-08 10:52:41 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.29
+""2018-05-08 10:52:41 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+""2018-05-08 10:52:41 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2018-05-08 10:52:41 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2018-05-08 10:52:41 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2018-05-08 10:52:41 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+""2018-05-08 10:52:41 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2018-05-08 10:52:41 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2018-05-08 10:52:41 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+""2018-05-08 10:52:42 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+""2018-05-08 10:52:42 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+""2018-05-08 10:52:42 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+""2018-05-08 10:52:42 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+""2018-05-08 10:52:42 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+""2018-05-08 10:52:42 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+""2018-05-08 10:52:42 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+""2018-05-08 10:52:42 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+""2018-05-08 10:52:42 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+""2018-05-08 10:52:42 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+""2018-05-08 10:52:43 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+""2018-05-08 10:52:43 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2018-05-08 10:52:43 [main] INFO  handyman.OrderController - Nacitanie LocalResorvel beany
+""2018-05-08 10:52:44 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3331427, org.springframework.security.web.context.SecurityContextPersistenceFilter@208ae8a1, org.springframework.security.web.header.HeaderWriterFilter@65598c1f, org.springframework.security.web.authentication.logout.LogoutFilter@59724ea5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5a061144, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@63d8e584, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e51923d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63bfa685, org.springframework.security.web.session.SessionManagementFilter@713077b7, org.springframework.security.web.access.ExceptionTranslationFilter@3689c823, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@73acb64d]
+""2018-05-08 10:52:44 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+""2018-05-08 10:52:44 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+""2018-05-08 10:52:44 [main] INFO  handyman.WebApplication - Started WebApplication in 6.194 seconds (JVM running for 9.387)
+""2018-05-08 10:52:45 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+""2018-05-08 10:52:45 [http-nio-8080-exec-1] INFO  handyman.OrderController - Zobrazenie všetkých požiadaviek od používate¾ov
+""2018-05-08 10:52:45 [http-nio-8080-exec-1] INFO  org.hibernate.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+""2018-05-08 10:52:45 [http-nio-8080-exec-1] INFO  handyman.OrderController - Ukonèenie controllera pre zobrazenie požiadaviek od všetkých používate¾ov
+""2018-05-08 10:53:11 [http-nio-8080-exec-1] INFO  handyman.OrderController - Používate¾ zadal požiadavku na registráciu
+""2018-05-08 10:53:11 [http-nio-8080-exec-1] INFO  handyman.OrderController - Registrácia prebehla vporiadku
+""2018-05-08 10:53:18 [http-nio-8080-exec-6] INFO  handyman.OrderController - Otvorenie formulára s vytvorením požiadavky
+""2018-05-08 10:58:03 [Thread-5] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@38d8bf73: startup date [Tue May 08 10:52:39 CEST 2018]; root of context hierarchy
+""2018-05-08 10:58:03 [Thread-5] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+""2018-05-08 10:58:03 [Thread-5] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2018-05-08 10:58:09 [main] INFO  handyman.WebApplication - Starting WebApplication on LAPTOP-UANT8ASR with PID 11948 (D:\Skola\8.semester\VAVA\projekt\Vava\target\classes started by micha in D:\Skola\8.semester\VAVA\projekt\Vava)
+""2018-05-08 10:58:09 [main] DEBUG handyman.WebApplication - Running with Spring Boot v1.5.12.RELEASE, Spring v4.3.16.RELEASE
+""2018-05-08 10:58:09 [main] INFO  handyman.WebApplication - No active profile set, falling back to default profiles: default
+""2018-05-08 10:58:09 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@59c50458: startup date [Tue May 08 10:58:09 CEST 2018]; root of context hierarchy
+""2018-05-08 10:58:10 [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'localeResolver' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=appConfig; factoryMethodName=localeResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [handyman/AppConfig.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=webApplication; factoryMethodName=localeResolver; initMethodName=null; destroyMethodName=(inferred); defined in handyman.WebApplication]
+""2018-05-08 10:58:11 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$234b48d7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2018-05-08 10:58:11 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+""2018-05-08 10:58:11 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+""2018-05-08 10:58:11 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.29
+""2018-05-08 10:58:11 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+""2018-05-08 10:58:11 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2018-05-08 10:58:11 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2018-05-08 10:58:11 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2018-05-08 10:58:11 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+""2018-05-08 10:58:11 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2018-05-08 10:58:11 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2018-05-08 10:58:11 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+""2018-05-08 10:58:12 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+""2018-05-08 10:58:12 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+""2018-05-08 10:58:12 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+""2018-05-08 10:58:12 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+""2018-05-08 10:58:12 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+""2018-05-08 10:58:12 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+""2018-05-08 10:58:12 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+""2018-05-08 10:58:12 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+""2018-05-08 10:58:13 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+""2018-05-08 10:58:13 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+""2018-05-08 10:58:13 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+""2018-05-08 10:58:13 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2018-05-08 10:58:14 [main] INFO  handyman.OrderController - Nacitanie LocalResorvel beany
+""2018-05-08 10:58:14 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@315bde2c, org.springframework.security.web.context.SecurityContextPersistenceFilter@251b103f, org.springframework.security.web.header.HeaderWriterFilter@306c20ce, org.springframework.security.web.authentication.logout.LogoutFilter@1831128a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2d8dcfa3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@57eef04, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c3af00a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1de12244, org.springframework.security.web.session.SessionManagementFilter@2afef453, org.springframework.security.web.access.ExceptionTranslationFilter@343aec72, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5cd6cb67]
+""2018-05-08 10:58:15 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+""2018-05-08 10:58:15 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+""2018-05-08 10:58:15 [main] INFO  handyman.WebApplication - Started WebApplication in 5.735 seconds (JVM running for 9.118)
+""2018-05-08 10:58:17 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+""2018-05-08 10:58:17 [http-nio-8080-exec-1] INFO  handyman.OrderController - Zobrazenie všetkých požiadaviek od používate¾ov
+""2018-05-08 10:58:17 [http-nio-8080-exec-1] INFO  org.hibernate.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+""2018-05-08 10:58:17 [http-nio-8080-exec-1] INFO  handyman.OrderController - Ukonèenie controllera pre zobrazenie požiadaviek od všetkých používate¾ov
+""2018-05-08 10:58:25 [http-nio-8080-exec-6] INFO  handyman.OrderController - Otvorenie formulára s vytvorením požiadavky
+""2018-05-08 10:58:43 [http-nio-8080-exec-1] INFO  handyman.OrderController - Zobrazenie všetkých požiadaviek od používate¾ov
+""2018-05-08 10:58:43 [http-nio-8080-exec-1] INFO  handyman.OrderController - Ukonèenie controllera pre zobrazenie požiadaviek od všetkých používate¾ov
+""2018-05-08 10:58:46 [http-nio-8080-exec-10] INFO  handyman.OrderController - OnHover bol spusteny nad id 8
+""2018-05-08 10:58:46 [http-nio-8080-exec-10] INFO  handyman.OrderController - OnHover prebehol úspešne
+""2018-05-08 10:58:46 [http-nio-8080-exec-9] INFO  handyman.OrderController - Otvorenie detailu s id 8
+""2018-05-08 10:58:47 [http-nio-8080-exec-7] INFO  handyman.OrderController - Otvorenie formulára s vytvorením požiadavky
+""2018-05-08 10:58:49 [http-nio-8080-exec-4] INFO  handyman.OrderController - Zobrazenie všetkých požiadaviek od používate¾ov
+""2018-05-08 10:58:49 [http-nio-8080-exec-4] INFO  handyman.OrderController - Ukonèenie controllera pre zobrazenie požiadaviek od všetkých používate¾ov
+""2018-05-08 10:58:52 [http-nio-8080-exec-1] INFO  handyman.OrderController - OnHover bol spusteny nad id 8
+""2018-05-08 10:58:52 [http-nio-8080-exec-1] INFO  handyman.OrderController - OnHover prebehol úspešne
+""2018-05-08 10:58:57 [http-nio-8080-exec-2] INFO  handyman.OrderController - Otvorenie formulára s vytvorením požiadavky
+""2018-05-08 10:59:40 [http-nio-8080-exec-8] INFO  handyman.OrderController - Zaèiatok ukladania požiadavky do databázy
+""2018-05-08 10:59:40 [http-nio-8080-exec-8] INFO  handyman.OrderController - Presmerovanie na obrazovku so všetkými požiadavkami
+""2018-05-08 10:59:40 [http-nio-8080-exec-7] INFO  handyman.OrderController - Zobrazenie všetkých požiadaviek od používate¾ov
+""2018-05-08 10:59:40 [http-nio-8080-exec-7] INFO  handyman.OrderController - Ukonèenie controllera pre zobrazenie požiadaviek od všetkých používate¾ov
+""2018-05-08 10:59:48 [http-nio-8080-exec-5] INFO  handyman.OrderController - OnHover bol spusteny nad id 23
+""2018-05-08 10:59:48 [http-nio-8080-exec-5] INFO  handyman.OrderController - OnHover prebehol úspešne
+""2018-05-08 10:59:48 [http-nio-8080-exec-4] INFO  handyman.OrderController - OnHover bol spusteny nad id 23
+""2018-05-08 10:59:48 [http-nio-8080-exec-4] INFO  handyman.OrderController - OnHover prebehol úspešne
+""2018-05-08 10:59:49 [http-nio-8080-exec-3] INFO  handyman.OrderController - OnHover bol spusteny nad id 25
+""2018-05-08 10:59:49 [http-nio-8080-exec-3] INFO  handyman.OrderController - OnHover prebehol úspešne
+""2018-05-08 10:59:49 [http-nio-8080-exec-1] INFO  handyman.OrderController - OnHover bol spusteny nad id 22
+""2018-05-08 10:59:49 [http-nio-8080-exec-1] INFO  handyman.OrderController - OnHover prebehol úspešne
+""2018-05-08 10:59:51 [http-nio-8080-exec-2] INFO  handyman.OrderController - OnHover bol spusteny nad id 25
+""2018-05-08 10:59:51 [http-nio-8080-exec-2] INFO  handyman.OrderController - OnHover prebehol úspešne
+""2018-05-08 10:59:51 [http-nio-8080-exec-10] INFO  handyman.OrderController - OnHover bol spusteny nad id 23
+""2018-05-08 10:59:51 [http-nio-8080-exec-10] INFO  handyman.OrderController - OnHover prebehol úspešne
+""2018-05-08 10:59:53 [http-nio-8080-exec-9] INFO  handyman.OrderController - OnHover bol spusteny nad id 23
+""2018-05-08 10:59:53 [http-nio-8080-exec-9] INFO  handyman.OrderController - OnHover prebehol úspešne
+""2018-05-08 10:59:56 [http-nio-8080-exec-8] INFO  handyman.OrderController - OnHover bol spusteny nad id 30
+""2018-05-08 10:59:56 [http-nio-8080-exec-8] INFO  handyman.OrderController - OnHover prebehol úspešne
+""2018-05-08 10:59:59 [http-nio-8080-exec-7] INFO  handyman.OrderController - OnHover bol spusteny nad id 30
+""2018-05-08 10:59:59 [http-nio-8080-exec-7] INFO  handyman.OrderController - OnHover prebehol úspešne
+""2018-05-08 11:00:00 [http-nio-8080-exec-6] INFO  handyman.OrderController - Otvorenie detailu s id 30
+""2018-05-08 11:00:07 [http-nio-8080-exec-4] INFO  handyman.OrderController - Zobrazenie všetkých požiadaviek od používate¾ov
+""2018-05-08 11:00:07 [http-nio-8080-exec-4] INFO  handyman.OrderController - Ukonèenie controllera pre zobrazenie požiadaviek od všetkých používate¾ov
+""2018-05-08 11:02:18 [Thread-5] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@59c50458: startup date [Tue May 08 10:58:09 CEST 2018]; root of context hierarchy
+""2018-05-08 11:02:18 [Thread-5] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+""2018-05-08 11:02:18 [Thread-5] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2018-05-08 11:02:24 [main] INFO  handyman.WebApplication - Starting WebApplication on LAPTOP-UANT8ASR with PID 8396 (D:\Skola\8.semester\VAVA\projekt\Vava\target\classes started by micha in D:\Skola\8.semester\VAVA\projekt\Vava)
+""2018-05-08 11:02:24 [main] DEBUG handyman.WebApplication - Running with Spring Boot v1.5.12.RELEASE, Spring v4.3.16.RELEASE
+""2018-05-08 11:02:24 [main] INFO  handyman.WebApplication - No active profile set, falling back to default profiles: default
+""2018-05-08 11:02:24 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3fcb3ffa: startup date [Tue May 08 11:02:24 CEST 2018]; root of context hierarchy
+""2018-05-08 11:02:25 [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'localeResolver' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=appConfig; factoryMethodName=localeResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [handyman/AppConfig.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=webApplication; factoryMethodName=localeResolver; initMethodName=null; destroyMethodName=(inferred); defined in handyman.WebApplication]
+""2018-05-08 11:02:25 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$931c536] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2018-05-08 11:02:26 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+""2018-05-08 11:02:26 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+""2018-05-08 11:02:26 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.29
+""2018-05-08 11:02:26 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+""2018-05-08 11:02:26 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2018-05-08 11:02:26 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2018-05-08 11:02:26 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2018-05-08 11:02:26 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+""2018-05-08 11:02:26 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2018-05-08 11:02:26 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2018-05-08 11:02:26 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+""2018-05-08 11:02:26 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+""2018-05-08 11:02:26 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+""2018-05-08 11:02:26 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+""2018-05-08 11:02:26 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+""2018-05-08 11:02:26 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+""2018-05-08 11:02:26 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+""2018-05-08 11:02:27 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+""2018-05-08 11:02:27 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+""2018-05-08 11:02:27 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+""2018-05-08 11:02:27 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+""2018-05-08 11:02:27 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+""2018-05-08 11:02:28 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2018-05-08 11:02:28 [main] INFO  handyman.OrderController - Nacitanie LocalResorvel beany
+""2018-05-08 11:02:28 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3508f0cf, org.springframework.security.web.context.SecurityContextPersistenceFilter@28207f97, org.springframework.security.web.header.HeaderWriterFilter@72dcaead, org.springframework.security.web.authentication.logout.LogoutFilter@6603da43, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3fe1833c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@29155bb0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@35163a54, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@458ae94f, org.springframework.security.web.session.SessionManagementFilter@2af66c4a, org.springframework.security.web.access.ExceptionTranslationFilter@5d260906, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2ee154f9]
+""2018-05-08 11:02:29 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+""2018-05-08 11:02:29 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+""2018-05-08 11:02:29 [main] INFO  handyman.WebApplication - Started WebApplication in 5.719 seconds (JVM running for 8.835)
+""2018-05-08 11:02:29 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+""2018-05-08 11:02:29 [http-nio-8080-exec-3] INFO  handyman.OrderController - Zobrazenie všetkých požiadaviek od používate¾ov
+""2018-05-08 11:02:29 [http-nio-8080-exec-3] INFO  org.hibernate.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+""2018-05-08 11:02:30 [http-nio-8080-exec-3] INFO  handyman.OrderController - Ukonèenie controllera pre zobrazenie požiadaviek od všetkých používate¾ov
+""2018-05-08 11:02:42 [http-nio-8080-exec-9] INFO  handyman.OrderController - Otvorenie formulára s vytvorením požiadavky
+""2018-05-08 11:03:17 [Thread-5] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3fcb3ffa: startup date [Tue May 08 11:02:24 CEST 2018]; root of context hierarchy
+""2018-05-08 11:03:17 [Thread-5] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+""2018-05-08 11:03:17 [Thread-5] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2018-05-08 11:03:23 [main] INFO  handyman.WebApplication - Starting WebApplication on LAPTOP-UANT8ASR with PID 9540 (D:\Skola\8.semester\VAVA\projekt\Vava\target\classes started by micha in D:\Skola\8.semester\VAVA\projekt\Vava)
+""2018-05-08 11:03:23 [main] DEBUG handyman.WebApplication - Running with Spring Boot v1.5.12.RELEASE, Spring v4.3.16.RELEASE
+""2018-05-08 11:03:23 [main] INFO  handyman.WebApplication - No active profile set, falling back to default profiles: default
+""2018-05-08 11:03:23 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@38d8bf73: startup date [Tue May 08 11:03:23 CEST 2018]; root of context hierarchy
+""2018-05-08 11:03:24 [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory - Overriding bean definition for bean 'localeResolver' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=appConfig; factoryMethodName=localeResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [handyman/AppConfig.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=webApplication; factoryMethodName=localeResolver; initMethodName=null; destroyMethodName=(inferred); defined in handyman.WebApplication]
+""2018-05-08 11:03:24 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$68e0f585] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2018-05-08 11:03:25 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+""2018-05-08 11:03:25 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+""2018-05-08 11:03:25 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.29
+""2018-05-08 11:03:25 [localhost-startStop-1] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+""2018-05-08 11:03:25 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2018-05-08 11:03:25 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2018-05-08 11:03:25 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2018-05-08 11:03:25 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+""2018-05-08 11:03:25 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2018-05-08 11:03:25 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2018-05-08 11:03:25 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+""2018-05-08 11:03:26 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+""2018-05-08 11:03:26 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+""2018-05-08 11:03:26 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+""2018-05-08 11:03:26 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+""2018-05-08 11:03:26 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+""2018-05-08 11:03:26 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+""2018-05-08 11:03:26 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+""2018-05-08 11:03:26 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+""2018-05-08 11:03:26 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+""2018-05-08 11:03:26 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+""2018-05-08 11:03:27 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+""2018-05-08 11:03:27 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2018-05-08 11:03:27 [main] INFO  handyman.OrderController - Nacitanie LocalResorvel beany
+""2018-05-08 11:03:28 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4efe3a30, org.springframework.security.web.context.SecurityContextPersistenceFilter@de49ca3, org.springframework.security.web.header.HeaderWriterFilter@3689c823, org.springframework.security.web.authentication.logout.LogoutFilter@5584e506, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5baf856d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@203235df, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@71c19e31, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@24988e9a, org.springframework.security.web.session.SessionManagementFilter@43f12ea, org.springframework.security.web.access.ExceptionTranslationFilter@13ff60d6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5da4299b]
+""2018-05-08 11:03:28 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+""2018-05-08 11:03:28 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+""2018-05-08 11:03:28 [main] INFO  handyman.WebApplication - Started WebApplication in 5.59 seconds (JVM running for 8.773)
+""2018-05-08 11:03:29 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+""2018-05-08 11:03:29 [http-nio-8080-exec-1] INFO  handyman.OrderController - Zobrazenie všetkých požiadaviek od používate¾ov
+""2018-05-08 11:03:29 [http-nio-8080-exec-1] INFO  org.hibernate.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+""2018-05-08 11:03:30 [http-nio-8080-exec-1] INFO  handyman.OrderController - Ukonèenie controllera pre zobrazenie požiadaviek od všetkých používate¾ov
+""2018-05-08 11:04:04 [http-nio-8080-exec-3] INFO  handyman.OrderController - Používate¾ zadal požiadavku na registráciu
+""2018-05-08 11:04:04 [http-nio-8080-exec-3] INFO  handyman.OrderController - Registrácia prebehla vporiadku
+""2018-05-08 11:04:10 [http-nio-8080-exec-5] INFO  handyman.OrderController - Otvorenie formulára s vytvorením požiadavky
+""2018-05-08 11:04:13 [http-nio-8080-exec-8] INFO  handyman.OrderController - Zobrazenie všetkých požiadaviek od používate¾ov
+""2018-05-08 11:04:13 [http-nio-8080-exec-8] INFO  handyman.OrderController - Ukonèenie controllera pre zobrazenie požiadaviek od všetkých používate¾ov
+""2018-05-08 11:04:15 [http-nio-8080-exec-3] INFO  handyman.OrderController - OnHover bol spusteny nad id 8
+""2018-05-08 11:04:15 [http-nio-8080-exec-3] INFO  handyman.OrderController - OnHover prebehol úspešne
+""2018-05-08 11:04:16 [http-nio-8080-exec-4] INFO  handyman.OrderController - Otvorenie detailu s id 8
+""2018-05-08 11:04:18 [http-nio-8080-exec-7] INFO  handyman.OrderController - Otvorenie formulára s vytvorením požiadavky
+""2018-05-08 11:04:19 [http-nio-8080-exec-10] INFO  handyman.OrderController - Zobrazenie všetkých požiadaviek od používate¾ov
+""2018-05-08 11:04:19 [http-nio-8080-exec-10] INFO  handyman.OrderController - Ukonèenie controllera pre zobrazenie požiadaviek od všetkých používate¾ov
+""2018-05-08 11:04:22 [http-nio-8080-exec-7] INFO  handyman.OrderController - Zobrazenie všetkých požiadaviek od používate¾ov
+""2018-05-08 11:04:22 [http-nio-8080-exec-7] INFO  handyman.OrderController - Ukonèenie controllera pre zobrazenie požiadaviek od všetkých používate¾ov
+""2018-05-08 11:04:32 [http-nio-8080-exec-4] INFO  handyman.OrderController - Otvorenie formulára s vytvorením požiadavky
+""2018-05-08 11:04:34 [http-nio-8080-exec-6] INFO  handyman.OrderController - Otvorenie formulára s vytvorením požiadavky
+""2018-05-08 11:04:36 [http-nio-8080-exec-8] INFO  handyman.OrderController - Zobrazenie všetkých požiadaviek od používate¾ov
+""2018-05-08 11:04:36 [http-nio-8080-exec-8] INFO  handyman.OrderController - Ukonèenie controllera pre zobrazenie požiadaviek od všetkých používate¾ov
+""2018-05-08 11:04:37 [http-nio-8080-exec-1] INFO  handyman.OrderController - OnHover bol spusteny nad id 7
+""2018-05-08 11:04:37 [http-nio-8080-exec-1] INFO  handyman.OrderController - OnHover prebehol úspešne
+""2018-05-08 11:04:38 [http-nio-8080-exec-3] INFO  handyman.OrderController - OnHover bol spusteny nad id 8
+""2018-05-08 11:04:38 [http-nio-8080-exec-3] INFO  handyman.OrderController - OnHover prebehol úspešne
+""2018-05-08 11:06:14 [http-nio-8080-exec-7] INFO  handyman.OrderController - Zobrazenie všetkých požiadaviek od používate¾ov
+""2018-05-08 11:06:14 [http-nio-8080-exec-7] INFO  handyman.OrderController - Ukonèenie controllera pre zobrazenie požiadaviek od všetkých používate¾ov
+""2018-05-08 11:07:28 [Thread-5] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@38d8bf73: startup date [Tue May 08 11:03:23 CEST 2018]; root of context hierarchy
+""2018-05-08 11:07:28 [Thread-5] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+""2018-05-08 11:07:28 [Thread-5] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 "
