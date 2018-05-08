@@ -93,3 +93,8 @@ div#map_container {
 	border: 0;
 	box-shadow: 0 0 0 0.1rem rgba(35,50,55,0.5)
 }
+
+.map_full {
+	min-width: 1050px;
+	min-height: 700px;
+}
