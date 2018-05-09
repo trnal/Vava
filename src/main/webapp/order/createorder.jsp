@@ -48,6 +48,7 @@
 				<button type="submit" class="btn btn-lg btn-primary w-100 mb-4 mt-1">Send</button>
 			</div>
 			<div class="col-xs-12 col-md-6">
+				<input id="pac-input" class="controls" type="text" placeholder="Search Box">
 				<div id="map_container"></div>
 				<div class="form-group">
 					<label><spring:message code="order.address" />:</label> <input
@@ -68,12 +69,9 @@
 	</div>
 
 
-
 	<script type="text/javascript" src="/resources/map-createorder.js"></script>
-	<script async defer
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzFAb-50-x7wH2Nfz1s5XzJiHyfRlwT4Y&callback=initMap"></script>
-
-
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzFAb-50-x7wH2Nfz1s5XzJiHyfRlwT4Y&callback=initMap&libraries=places"></script>
+	
 </body>
 
 
