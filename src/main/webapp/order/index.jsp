@@ -24,8 +24,8 @@
 			var markers = ${orders}
 			var createdmarkers = [];
 			var uluru = {
-				lat : -25.363,
-				lng : 131.044
+				lat : 48.14816,
+				lng : 17.10674
 			};
 			var map = new google.maps.Map(document
 					.getElementById('map_container'), {

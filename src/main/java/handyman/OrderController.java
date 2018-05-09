@@ -115,6 +115,11 @@ public class OrderController {
 		} catch(Exception e) {
 			LOG.log(Level.SEVERE, "Používateľa s id " + id + " sa nepodarilo vybrať z databázy", e);
 		}
+		
+		Gson gsonparser = new Gson();	
+		String gson = gsonparser.toJson(order);
+		model.addAttribute("orderJS", gson);
+		
 		model.addAttribute("authenticatedUser", user.getId() == order.getUserId());
 		model.addAttribute("order", order);
 		return "order/showOrder";
