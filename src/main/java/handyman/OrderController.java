@@ -71,6 +71,8 @@ public class OrderController {
 		return "redirect:/order/index";
     }
 	
+	
+	
 	@GetMapping(path="/order/data")
     public ResponseEntity<?> getOnHoverData(@RequestParam("orderid") Long orderId) {
 		LOG.log(Level.INFO, "OnHover bol spusteny nad id " + orderId);
