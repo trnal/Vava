@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,8 +14,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import handyman.repositories.OrderRepository;
 import handyman.services.OrderService;
+import handyman.services.UserService;
+
 import com.google.gson.Gson;
 import handyman.models.Order;
+import handyman.models.User;
 
 @Controller
 public class OrderController {
@@ -21,6 +26,8 @@ public class OrderController {
 	
 	@Autowired
 	private OrderRepository orderRepository;
+	@Autowired
+	private UserService userService;
 	@Autowired
 	private OrderService orderService;
 	
@@ -49,11 +56,12 @@ public class OrderController {
     		@RequestParam("address") String address, @RequestParam("town") String town, 
     		@RequestParam("coordLon") Double coordLon, @RequestParam("coordLat") Double coordLat, Model model)
 	{
-		//Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		//User user = (User) authentication.getPrincipal();
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		User user = userService.findByUsername(authentication.getName());
 		
-		//LOG.log(Level.INFO, "Používateľ s id " + user. + "ukladá požiadavku do databázy");
-		Order newOrder = new Order(/*user.getId(), */name, description, address, phoneNumber, town, coordLon, coordLat);	
+		LOG.log(Level.INFO, "Používateľ s id " + user.getId() + "ukladá požiadavku do databázy");
+		Order newOrder = new Order(user.getId(), name, description, address, phoneNumber, town, coordLon, coordLat);	
+		
 		try {
 			orderRepository.save(newOrder);
 		} catch (Exception e) {
@@ -79,13 +87,17 @@ public class OrderController {
 	@RequestMapping(path="/order-detail/{id}", method = RequestMethod.GET)
 	public String show(Model model, @PathVariable(value = "id")Long id) {
 		LOG.log(Level.INFO, "Otvorenie detailu s id " + id);
+		
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		User user = userService.findByUsername(authentication.getName());
+
 		Order order  = null;
 		try {
 			order = orderService.getOrderById(id);	
 		} catch(Exception e) {
 			LOG.log(Level.SEVERE, "Používateľa s id " + id + " sa nepodarilo vybrať z databázy", e);
 		}
-		
+		model.addAttribute("authenticatedUser", user.getId() == order.getUserId());
 		model.addAttribute("order", order);
 		return "order/showOrder";
 	}

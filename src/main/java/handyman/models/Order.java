@@ -28,7 +28,7 @@ public class Order {
 	
 	public Order() {}
 	
-	public Order(/*Long userId,*/ String name, String description, String address, String phoneNumber, String town, double coordLon, double coordLat) {
+	public Order(Long userId, String name, String description, String address, String phoneNumber, String town, double coordLon, double coordLat) {
 		this.name = name;
 		this.description = description;
 		this.address = address;
@@ -36,7 +36,7 @@ public class Order {
 		this.town = town;
 		this.coordLon = coordLon;
 		this.coordLat = coordLat;
-		//this.userId = userId;
+		this.userId = userId;
 	}
 	
 	public long getId() {
