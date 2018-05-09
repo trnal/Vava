@@ -1,5 +1,6 @@
 <%@ include file="/partials/prefix.jsp" %>
 
+
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="en">

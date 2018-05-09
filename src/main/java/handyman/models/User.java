@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Table(name = "users", uniqueConstraints = { @UniqueConstraint(columnNames = { "email" }) })
 @Entity
-public class User{
+public class User {
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="id")

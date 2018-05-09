@@ -7,8 +7,10 @@ import javax.persistence.*;
 public class Order {
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name="id")
+	@Column(name="id")
     private long id;
+	@Column(name="user_id")
+    private long userId;
 	@Column(name="name")
     private String name;
 	@Column(name="description")
@@ -26,7 +28,7 @@ public class Order {
 	
 	public Order() {}
 	
-	public Order(String name, String description, String address, String phoneNumber, String town, double coordLon, double coordLat) {
+	public Order(/*Long userId,*/ String name, String description, String address, String phoneNumber, String town, double coordLon, double coordLat) {
 		this.name = name;
 		this.description = description;
 		this.address = address;
@@ -34,6 +36,7 @@ public class Order {
 		this.town = town;
 		this.coordLon = coordLon;
 		this.coordLat = coordLat;
+		//this.userId = userId;
 	}
 	
 	public long getId() {
@@ -73,5 +76,15 @@ public class Order {
 	
 	public Double getCoordLat() {
 		return coordLat;
+	}
+
+	public long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(long userId) {
+		this.userId = userId;
 	};
+	
+	
 }

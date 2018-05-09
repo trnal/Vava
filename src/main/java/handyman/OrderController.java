@@ -47,9 +47,13 @@ public class OrderController {
     public String storeOrder(@RequestParam("name") String name, @RequestParam("categoryId") Double categoryId, 
     		@RequestParam("description") String description, @RequestParam("phoneNumber") String phoneNumber, 
     		@RequestParam("address") String address, @RequestParam("town") String town, 
-    		@RequestParam("coordLon") Double coordLon, @RequestParam("coordLat") Double coordLat, Model model) {
-		LOG.log(Level.INFO, "Začiatok ukladania požiadavky do databázy");
-		Order newOrder = new Order(name, description, address, phoneNumber, town, coordLon, coordLat);	
+    		@RequestParam("coordLon") Double coordLon, @RequestParam("coordLat") Double coordLat, Model model)
+	{
+		//Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		//User user = (User) authentication.getPrincipal();
+		
+		//LOG.log(Level.INFO, "Používateľ s id " + user. + "ukladá požiadavku do databázy");
+		Order newOrder = new Order(/*user.getId(), */name, description, address, phoneNumber, town, coordLon, coordLat);	
 		try {
 			orderRepository.save(newOrder);
 		} catch (Exception e) {
