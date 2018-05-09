@@ -71,6 +71,22 @@ public class OrderController {
 		return "redirect:/order/index";
     }
 	
+	@PostMapping(path="/order/delete")
+    public String deleteOrder(@RequestParam("orderId") Long orderId)
+	{
+		LOG.log(Level.INFO, "Order with id: " + orderId + "is going to be deleted");
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		User user = userService.findByUsername(authentication.getName());
+		
+		try {
+			orderRepository.delete(orderId);
+		} catch (Exception e) {
+			LOG.log(Level.SEVERE, "Zákazka nebola správne vymazaná z databázy", e);
+		}
+		LOG.log(Level.INFO, "Presmerovanie na obrazovku so všetkými požiadavkami");
+		return "redirect:/order/index";
+    }
+	
 	
 	
 	@GetMapping(path="/order/data")

@@ -67,7 +67,7 @@ public class Order {
 	};
 	
 	public String getPhoneNumber() {
-		return town;
+		return this.phoneNumber;
 	};
 	
 	public Double getCoordLon() {

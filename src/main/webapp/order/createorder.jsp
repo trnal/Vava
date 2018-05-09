@@ -57,10 +57,7 @@
 				<div id="map_container"></div>
 				
 				<button type="submit" class="btn btn-primary col-xs-10 col-sm-5">Send</button>
-
 			</form>
-			
-
 		</div>
 	</div>
 
