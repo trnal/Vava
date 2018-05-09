@@ -1,4 +1,5 @@
 <%@ include file="/partials/prefix.jsp" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,9 +21,12 @@
 			<div>${order.getDescription()}</div>
 			<div>${order.getPhoneNumber()}</div>
 		</div>
-		<c:if test="${authenticatedUser == true}" >
-			<button>Vymazať</button>
+		<form:form method="PUT" action="/order/delete">
+			<input hidden name="orderId" value="${order.getId()}"></input>
+			<c:if test="${authenticatedUser == true}" >
+			<button type="submit">Vymazať</button>
 		</c:if>
+		</form:form>
 
 	</div>
 
