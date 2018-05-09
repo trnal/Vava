@@ -62,6 +62,5 @@
 		}
 	</script>
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzFAb-50-x7wH2Nfz1s5XzJiHyfRlwT4Y&callback=initMap"></script>
-	
 </body>
 </html>

@@ -42,7 +42,7 @@ function placeMarker(position, map) {
 		map : map
 	});
 
-	map.panTo(position);
+
 	lat = marker.getPosition().lat();
 	lng = marker.getPosition().lng();
 	document.getElementById('map-long').setAttribute('value', lng);
