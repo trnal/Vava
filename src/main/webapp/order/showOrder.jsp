@@ -24,8 +24,8 @@
 		<form:form method="PUT" action="/order/delete">
 			<input hidden name="orderId" value="${order.getId()}"></input>
 			<c:if test="${authenticatedUser == true}" >
-			<button type="submit">Vymazať</button>
-		</c:if>
+				<button type="submit"><spring:message code="order.delete"/></button>
+			</c:if>
 		</form:form>
 
 	</div>
